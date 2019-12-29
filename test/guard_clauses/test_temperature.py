@@ -1,9 +1,9 @@
+from unittest import TestCase
+
 from rigor_talks.guard_clauses.temperature import (
     Temperature,
     TemperatureNegativeException
 )
-
-from unittest import TestCase
 
 
 class TestTemperatureTest(TestCase):
