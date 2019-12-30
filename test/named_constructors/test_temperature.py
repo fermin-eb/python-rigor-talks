@@ -18,3 +18,10 @@ class TestTemperatureTest(TestCase):
             measure,
             (Temperature(measure)).measure()
         )
+
+    def test_trytoCreateAValidTemperatureWithNamedConstructor(self):
+        measure = 18
+        self.assertEqual(
+            measure,
+            (Temperature.take(measure)).measure()
+        )
