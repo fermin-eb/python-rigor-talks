@@ -16,5 +16,9 @@ class Temperature():
         if (measure < 0):
             raise TemperatureNegativeException("Measure should be postive")
 
+    @staticmethod
+    def take(measure: int):
+        return Temperature(measure)
+
     def measure(self):
         return self.__measure
