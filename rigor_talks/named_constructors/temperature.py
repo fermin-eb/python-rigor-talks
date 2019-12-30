@@ -1,6 +1,8 @@
 
 class TemperatureNegativeException(Exception):
-    pass
+    @classmethod
+    def from_measure(cls, measure: int):
+        return cls(f"Measure should be postive: {measure}")
 
 
 class Temperature():
@@ -14,7 +16,7 @@ class Temperature():
 
     def __check_measure_is_positive(self, measure: int):
         if (measure < 0):
-            raise TemperatureNegativeException("Measure should be postive")
+            raise TemperatureNegativeException.from_measure(measure)
 
     @classmethod
     def take(cls, measure: int):
