@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from rigor_talks.self_encapsulation.temperature import (
+from rigor_talks.named_constructors.temperature import (
     Temperature,
     TemperatureNegativeException
 )
