@@ -1,11 +1,11 @@
 from unittest import TestCase
 
-from rigor_talks.self_shunt.temperature import (
+from rigor_talks.test_class.temperature import (
     Temperature,
     TemperatureNegativeException
 )
 
-from rigor_talks.self_shunt.temperature_test_class import TemperatureTestClass
+from rigor_talks.test_class.temperature_test_class import TemperatureTestClass
 
 
 class TestTemperatureTest(TestCase):
