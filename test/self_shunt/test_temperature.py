@@ -39,8 +39,10 @@ class TestTemperatureTest(TestCase):
             (TemperatureTestClass.take(100)).is_super_hot()
         )
 
-    @pytest.mark.skip()
     def test_tryToCheckIfASuperColdTemperatureIsSuperCold(self):
         self.assertTrue(
-            (Temperature.take(10)).is_super_cold(None)
+            (Temperature.take(10)).is_super_cold(self)
         )
+
+    def get_threshold(self):
+        return 50
