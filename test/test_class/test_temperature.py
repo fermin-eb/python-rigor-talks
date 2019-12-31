@@ -5,6 +5,8 @@ from rigor_talks.test_class.temperature import (
     TemperatureNegativeException
 )
 
+from rigor_talks.test_class.temperature_test_class import TemperatureTestClass
+
 
 class TestTemperatureTest(TestCase):
 
@@ -28,10 +30,10 @@ class TestTemperatureTest(TestCase):
 
     def test_tryToCheckIfAColdTemperatureIsSuperHot(self):
         self.assertFalse(
-            (Temperature.take(10)).is_super_hot()
+            (TemperatureTestClass.take(10)).is_super_hot()
         )
 
     def test_tryToCheckIfASuperHotTemperatureIsSuperHot(self):
         self.assertTrue(
-            (Temperature.take(100)).is_super_hot()
+            (TemperatureTestClass.take(100)).is_super_hot()
         )

@@ -1,4 +1,4 @@
-from temperature import Temperature
+from rigor_talks.test_class.temperature import Temperature
 
 
 class TemperatureTestClass(Temperature):
