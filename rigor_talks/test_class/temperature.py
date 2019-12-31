@@ -22,11 +22,15 @@ class Temperature():
         return self.__measure
 
     def is_super_hot(self) -> bool:
+        threshold = self.get_threshold()
+        return self.measure() >= threshold
+
+    def get_threshold(self):
         db_path = os.path.join(os.path.dirname(__file__), 'database.sqlite3')
         con = sqlite3.connect(db_path)
         cur = con.cursor()
         threshold, = cur.execute("SELECT hot_threshold FROM configuration").fetchone()
-        return self.measure() >= threshold
+        return threshold
 
 
 class TemperatureNegativeException(Exception):
