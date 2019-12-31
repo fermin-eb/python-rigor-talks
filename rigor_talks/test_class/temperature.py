@@ -1,3 +1,5 @@
+import os
+import sqlite3
 
 class Temperature():
 
@@ -19,8 +21,12 @@ class Temperature():
     def measure(self):
         return self.__measure
 
-    def is_too_hot(self):
-        pass
+    def is_super_hot(self) -> bool:
+        db_path = os.path.join(os.path.dirname(__file__), 'database.sqlite3')
+        con = sqlite3.connect(db_path)
+        cur = con.cursor()
+        threshold, = cur.execute("SELECT hot_threshold FROM configuration").fetchone()
+        return self.measure() >= threshold
 
 
 class TemperatureNegativeException(Exception):
