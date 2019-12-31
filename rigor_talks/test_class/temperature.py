@@ -37,3 +37,5 @@ class TemperatureNegativeException(Exception):
     @classmethod
     def from_measure(cls, measure: int):
         return cls(f"Measure should be postive: {measure}")
+
+
